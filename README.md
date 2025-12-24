@@ -24,11 +24,13 @@ Calculate simple summaries like averages
 
 Inputs
 
+
 Student test scores
 
 Subject scores (Math, Science, English)
 
 Outputs
+
 
 Printed test scores
 
@@ -46,12 +48,16 @@ END
 
 Tech Notes
 
+
 Uses Python 2D lists
 
 No external libraries required
 
 Designed for beginner-level understanding
 
-Contributors
 
-(Your Name Here)
+Contributors:
+
+Christian Kenshin G. Cupay  
+Arron Sean P Gorme  
+Slater Yuan Y. Ladaran
