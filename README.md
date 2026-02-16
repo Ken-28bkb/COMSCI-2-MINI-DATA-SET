@@ -61,7 +61,8 @@ Designed for beginner-level understanding
 
 Ethical Consideration
 
-This project follows ethical programming practices inspired by the Association for Computing Machinery (ACM) Code of Ethics. All code is original, properly documented, and does not collect or store sensitive personal data.
+This project follows ethical programming practices inspired by the Association for Computing Machinery (ACM) Code of Ethics.
+All code is original, properly documented, and does not collect or store sensitive personal data.
 
 Contributors:
 
