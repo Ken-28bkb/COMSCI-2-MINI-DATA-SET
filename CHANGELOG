@@ -1,4 +1,5 @@
 Student Test Scores – Changelog
+
 [v1.0] – 2025-08-15
 Added
 
@@ -42,6 +43,8 @@ Average calculation for a student’s scores
 
 Output display for computed average
 
+Improved console output formatting
+
 [v1.4.1] – 2025-11-10 (Minor Patch)
 Fixed
 
@@ -57,3 +60,20 @@ Final review of dataset and code logic
 Cleaned up comments and formatting
 
 Prepared file for submission
+
+[v1.6] – 2026-02-16
+Added
+
+Updated README with improved documentation
+
+Added detailed methodology section
+
+Added ethical considerations section
+
+Improved project description and objectives
+
+Changed
+
+Refined formatting and overall repository organization
+
+Prepared repository for major project update submission
