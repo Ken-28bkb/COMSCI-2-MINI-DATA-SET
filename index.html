@@ -5,152 +5,56 @@
 
 <style>
 body{
-font-family: Arial;
-text-align:center;
+font-family: monospace;
+background:#0f172a;
+color:#e2e8f0;
+display:flex;
+align-items:center;
+justify-content:center;
+height:100vh;
+margin:0;
+}
+
+.box{
+background:#111827;
 padding:30px;
-background:#f4f6f9;
+border-radius:8px;
+border:1px solid #334155;
+width:500px;
 }
 
-table{
-border-collapse:collapse;
-margin:auto;
-margin-top:20px;
-width:70%;
+h1{
+color:#ef4444;
+margin-top:0;
 }
 
-th,td{
-border:1px solid black;
-padding:10px;
-}
-
-th{
-background:#4CAF50;
-color:white;
-}
-
-input{
-padding:6px;
-margin:4px;
-}
-
-button{
-padding:8px 12px;
-margin:6px;
-cursor:pointer;
+code{
+color:#22c55e;
 }
 </style>
-
 </head>
 
 <body>
 
-<h1>Student Test Scores Manager</h1>
+<div class="box">
 
-<h3>Add Student Scores</h3>
+<h1>Application Error</h1>
 
-Student Name
-<input id="name">
+<p>The Student Test Scores application failed to load.</p>
 
-Math
-<input id="math" type="number">
+<p><strong>Error:</strong></p>
 
-Science
-<input id="science" type="number">
+<code>
+SyntaxError: Unexpected token ')'<br>
+at addStudent (script.js:42)<br>
+at HTMLButtonElement.onclick
+</code>
 
-English
-<input id="english" type="number">
+<br><br>
 
-<button onclick="addStudent()">Add Student</button>
+<p>Please check the program logic for the 2D array implementation.</p>
 
-<table id="scoreTable">
-
-<thead>
-<tr>
-<th>Student</th>
-<th>Math</th>
-<th>Science</th>
-<th>English</th>
-</tr>
-</thead>
-
-<tbody></tbody>
-
-</table>
-
-<h3>Compute Student Average</h3>
-
-Student Index
-<input id="avgStudent" type="number">
-
-<button onclick="computeAverage()">Compute Average</button>
-
-<p id="avgResult"></p>
-
-<script>
-
-let scores = []
-let names = []
-
-function addStudent(){
-
-let name = document.getElementById("name").value
-
-let math = Number(document.getElementById("math").value)
-let science = Number(document.getElementById("science").value)
-let english = Number(document.getElementById("english").value)
-
-let studentScores = [math, science, english]
-
-scores.push(studentScores)
-names.push(name)
-
-displayScores()
-
-}
-
-function displayScores(){
-
-let table = document.querySelector("#scoreTable tbody")
-
-table.innerHTML = ""
-
-for(let i=0;i<scores.length;i++){
-
-let row = "<tr>"
-
-row += "<td>" + names[i] + "</td>"
-
-for(let j=0;j<scores[i].length;j++){
-row += "<td>" + scores[i][j] + "</td>"
-}
-
-row += "</tr>"
-
-table.innerHTML += row
-
-}
-
-}
-
-function computeAverage(){
-
-let s = document.getElementById("avgStudent").value
-
-let total = 0
-
-for(let i=0;i<scores[s].length;i++){
-total += scores[s][i]
-}
-
-let average = total / scores[s].length
-
-document.getElementById("avgResult").innerText =
-"Average Score: " + average
-
-</script>
-
-</body>
-</html>
+</div>
 
 </body>
 </html>
