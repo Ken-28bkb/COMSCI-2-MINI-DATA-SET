@@ -3,139 +3,145 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Student Test Scores – Changelog</title>
-
+<title>COMSCI-2 Mini Dataset Project</title>
 <style>
     body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f6f8;
-        margin: 40px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f9f9f9;
         color: #333;
+        margin: 0;
+        padding: 0 20px;
     }
 
-    h1 {
+    header {
+        background-color: #3498db;
+        color: white;
         text-align: center;
-        color: #2c3e50;
+        padding: 30px 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
-    .version {
+    h1, h2 {
+        margin: 0;
+        padding-bottom: 10px;
+    }
+
+    main {
+        max-width: 900px;
+        margin: 20px auto;
         background: white;
-        padding: 20px;
-        margin-bottom: 20px;
-        border-left: 6px solid #3498db;
+        padding: 30px;
         box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        border-radius: 5px;
+    }
+
+    section {
+        margin-bottom: 30px;
     }
 
     h2 {
-        margin-top: 0;
-        color: #34495e;
-    }
-
-    h3 {
-        margin-bottom: 5px;
         color: #2c3e50;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 5px;
     }
 
     ul {
-        margin-top: 5px;
+        margin-top: 10px;
+        padding-left: 20px;
+    }
+
+    pre {
+        background-color: #f1f1f1;
+        padding: 15px;
+        overflow-x: auto;
+        border-radius: 4px;
     }
 </style>
 </head>
-
 <body>
 
-<h1>📑 Student Test Scores – Changelog</h1>
+<header>
+    <h1>COMSCI-2 Mini Dataset Project</h1>
+    <p>Student Test Scores – Mini Dataset</p>
+</header>
 
-<div class="version">
-<h2>v1.0 – 2025-08-15</h2>
-<h3>Added</h3>
-<ul>
-<li>Created initial 2D array for storing student test scores</li>
-<li>Included 5 students and 3 subjects (Math, Science, English)</li>
-<li>Set up basic Python program structure</li>
-</ul>
-</div>
+<main>
+    <section>
+        <h2>Overview</h2>
+        <p>This project stores weekly test scores of students in a table-like structure using a 2D array:</p>
+        <ul>
+            <li>Rows represent students</li>
+            <li>Columns represent subjects (Math, Science, English)</li>
+        </ul>
+        <p>The program allows users to access, update, display, and summarize the data clearly.</p>
+    </section>
 
-<div class="version">
-<h2>v1.1 – 2025-08-29</h2>
-<h3>Added</h3>
-<ul>
-<li>Labeled rows to represent individual students</li>
-<li>Added comments describing subject columns</li>
-</ul>
+    <section>
+        <h2>Problem Statement</h2>
+        <p>Teachers and students need a simple way to organize and review test scores. Without proper structure, scores can become confusing and difficult to manage. This project shows how a 2D array can organize student scores efficiently and clearly.</p>
+    </section>
 
-<h3>Changed</h3>
-<ul>
-<li>Improved formatting of the 2D array for better readability</li>
-</ul>
-</div>
+    <section>
+        <h2>Objectives</h2>
+        <ul>
+            <li>Store student test scores using a 2D array</li>
+            <li>Access specific scores using indexing</li>
+            <li>Update scores when changes are needed</li>
+            <li>Calculate summaries like averages</li>
+            <li>Display organized test score data</li>
+        </ul>
+    </section>
 
-<div class="version">
-<h2>v1.2 – 2025-09-12</h2>
-<h3>Added</h3>
-<ul>
-<li>Implemented code to access and print a specific score</li>
-<li>Tested array indexing using sample outputs</li>
-</ul>
-</div>
+    <section>
+        <h2>Inputs</h2>
+        <ul>
+            <li>Student test scores</li>
+            <li>Subject scores (Math, Science, English)</li>
+        </ul>
+    </section>
 
-<div class="version">
-<h2>v1.3 – 2025-10-03</h2>
-<h3>Added</h3>
-<ul>
-<li>Added score update feature to modify existing values</li>
-</ul>
+    <section>
+        <h2>Outputs</h2>
+        <ul>
+            <li>Printed test scores in table format</li>
+            <li>Updated student scores after changes</li>
+            <li>Average score of a student</li>
+        </ul>
+    </section>
 
-<h3>Changed</h3>
-<ul>
-<li>Updated Student 4’s Math score to 77</li>
-</ul>
-</div>
+    <section>
+        <h2>Logic Plan (Pseudocode)</h2>
+        <pre>
+START
+    Create 2D array of student scores
+    Display all student scores
+    Access a specific score
+    Update a selected score
+    Compute the average score of one student
+END
+        </pre>
+    </section>
 
-<div class="version">
-<h2>v1.4 – 2025-10-21</h2>
-<h3>Added</h3>
-<ul>
-<li>Implemented average calculation for a student’s scores</li>
-<li>Added output display for computed averages</li>
-<li>Improved console output formatting</li>
-</ul>
-</div>
+    <section>
+        <h2>Tech Notes</h2>
+        <ul>
+            <li>Uses Python 2D lists</li>
+            <li>No external libraries required</li>
+            <li>Implemented using basic Python functions (sum, indexing)</li>
+            <li>Designed for beginner-level understanding</li>
+        </ul>
+    </section>
 
-<div class="version">
-<h2>v1.4.1 – 2025-11-10 (Minor Patch)</h2>
-<h3>Fixed</h3>
-<ul>
-<li>Corrected minor calculation formatting issue</li>
-<li>Improved variable naming for clarity</li>
-</ul>
-</div>
-
-<div class="version">
-<h2>v1.5 – 2025-11-26 (Final)</h2>
-<ul>
-<li>Final review of dataset and code logic</li>
-<li>Cleaned up comments and formatting</li>
-<li>Prepared file for submission</li>
-</ul>
-</div>
-
-<div class="version">
-<h2>v1.6 – 2026-02-16</h2>
-<h3>Added</h3>
-<ul>
-<li>Updated README with improved documentation</li>
-<li>Added detailed methodology section</li>
-<li>Added ethical considerations section</li>
-<li>Improved project description and objectives</li>
-</ul>
-
-<h3>Changed</h3>
-<ul>
-<li>Refined formatting and overall repository organization</li>
-<li>Prepared repository for major project update submission</li>
-</ul>
-</div>
+    <section>
+        <h2>Ethical Consideration</h2>
+        <p>This project follows ethical programming practices inspired by the Association for Computing Machinery (ACM) Code of Ethics:</p>
+        <ul>
+            <li>All code is original and properly documented</li>
+            <li>No sensitive personal data is collected or stored</li>
+            <li>Data used is fictional and for educational purposes only</li>
+        </ul>
+    </section>
+</main>
 
 </body>
 </html>
