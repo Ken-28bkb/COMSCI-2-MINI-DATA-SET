@@ -1,87 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>COMSCI-2 Mini Dataset Project</title>
-<style>
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #f9f9f9;
-        color: #333;
-        margin: 0;
-        padding: 0 20px;
-    }
-
-    header {
-        background-color: #3498db;
-        color: white;
-        text-align: center;
-        padding: 30px 20px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    h1, h2 {
-        margin: 0;
-        padding-bottom: 10px;
-    }
-
-    main {
-        max-width: 900px;
-        margin: 20px auto;
-        background: white;
-        padding: 30px;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        border-radius: 5px;
-    }
-
-    section {
-        margin-bottom: 30px;
-    }
-
-    h2 {
-        color: #2c3e50;
-        border-bottom: 2px solid #3498db;
-        padding-bottom: 5px;
-    }
-
-    ul {
-        margin-top: 10px;
-        padding-left: 20px;
-    }
-
-    pre {
-        background-color: #f1f1f1;
-        padding: 15px;
-        overflow-x: auto;
-        border-radius: 4px;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Test Scores – Mini Dataset Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        code {
+            background-color: #e8e8e8;
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+        pre {
+            background-color: #e8e8e8;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #3498db;
+            color: #fff;
+        }
+        .section {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+    </style>
 </head>
 <body>
+    <h1>Student Test Scores – Mini Dataset Project</h1>
 
-<header>
-    <h1>COMSCI-2 Mini Dataset Project</h1>
-    <p>Student Test Scores – Mini Dataset</p>
-</header>
-
-<main>
-    <section>
+    <div class="section">
         <h2>Overview</h2>
-        <p>This project stores weekly test scores of students in a table-like structure using a 2D array:</p>
+        <p>This project demonstrates how to use a <strong>2D array</strong> (list of lists) in Python to store and manage student test scores in different subjects. It shows how real-life school data can be efficiently organized and processed.</p>
         <ul>
             <li>Rows represent students</li>
             <li>Columns represent subjects (Math, Science, English)</li>
         </ul>
-        <p>The program allows users to access, update, display, and summarize the data clearly.</p>
-    </section>
+        <p>The program allows users to <strong>access, update, display, and summarize</strong> the data clearly.</p>
+    </div>
 
-    <section>
+    <div class="section">
         <h2>Problem Statement</h2>
-        <p>Teachers and students need a simple way to organize and review test scores. Without proper structure, scores can become confusing and difficult to manage. This project shows how a 2D array can organize student scores efficiently and clearly.</p>
-    </section>
+        <p>Teachers and students need a simple way to organize and review test scores. Without proper structure, scores can become confusing and difficult to manage. This project uses a 2D array to organize student scores efficiently and clearly.</p>
+    </div>
 
-    <section>
+    <div class="section">
         <h2>Objectives</h2>
         <ul>
             <li>Store student test scores using a 2D array</li>
@@ -90,26 +78,26 @@
             <li>Calculate summaries like averages</li>
             <li>Display organized test score data</li>
         </ul>
-    </section>
+    </div>
 
-    <section>
+    <div class="section">
         <h2>Inputs</h2>
         <ul>
             <li>Student test scores</li>
             <li>Subject scores (Math, Science, English)</li>
         </ul>
-    </section>
+    </div>
 
-    <section>
+    <div class="section">
         <h2>Outputs</h2>
         <ul>
             <li>Printed test scores in table format</li>
             <li>Updated student scores after changes</li>
             <li>Average score of a student</li>
         </ul>
-    </section>
+    </div>
 
-    <section>
+    <div class="section">
         <h2>Logic Plan (Pseudocode)</h2>
         <pre>
 START
@@ -120,9 +108,9 @@ START
     Compute the average score of one student
 END
         </pre>
-    </section>
+    </div>
 
-    <section>
+    <div class="section">
         <h2>Tech Notes</h2>
         <ul>
             <li>Uses Python 2D lists</li>
@@ -130,18 +118,39 @@ END
             <li>Implemented using basic Python functions (sum, indexing)</li>
             <li>Designed for beginner-level understanding</li>
         </ul>
-    </section>
+    </div>
 
-    <section>
+    <div class="section">
         <h2>Ethical Consideration</h2>
-        <p>This project follows ethical programming practices inspired by the Association for Computing Machinery (ACM) Code of Ethics:</p>
+        <p>This project follows ethical programming practices inspired by the <strong>ACM Code of Ethics</strong>:</p>
         <ul>
             <li>All code is original and properly documented</li>
             <li>No sensitive personal data is collected or stored</li>
             <li>Data used is fictional and for educational purposes only</li>
         </ul>
-    </section>
-</main>
+    </div>
 
+    <div class="section">
+        <h2>Example Python Code</h2>
+        <pre>
+# Sample Python code for managing student test scores
+students = [
+    [85, 90, 78],  # Student 1: Math, Science, English
+    [92, 88, 95],  # Student 2
+    [76, 85, 80]   # Student 3
+]
+
+# Display scores
+for i, scores in enumerate(students):
+    print(f"Student {i+1}: Math={scores[0]}, Science={scores[1]}, English={scores[2]}")
+
+# Update a score
+students[0][1] = 95  # Update Student 1 Science score to 95
+
+# Calculate average of Student 1
+average = sum(students[0]) / len(students[0])
+print(f"Student 1 Average: {average}")
+        </pre>
+    </div>
 </body>
 </html>
