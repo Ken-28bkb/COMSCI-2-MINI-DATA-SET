@@ -1,156 +1,219 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Test Scores – Mini Dataset Project</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        h1, h2, h3 {
-            color: #2c3e50;
-        }
-        code {
-            background-color: #e8e8e8;
-            padding: 2px 5px;
-            border-radius: 4px;
-        }
-        pre {
-            background-color: #e8e8e8;
-            padding: 10px;
-            border-radius: 4px;
-            overflow-x: auto;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-        table, th, td {
-            border: 1px solid #ccc;
-        }
-        th, td {
-            padding: 8px;
-            text-align: center;
-        }
-        th {
-            background-color: #3498db;
-            color: #fff;
-        }
-        .section {
-            background-color: #fff;
-            padding: 15px;
-            border-radius: 6px;
-            margin-bottom: 20px;
-            box-shadow: 0 0 5px rgba(0,0,0,0.1);
-        }
-    </style>
+
+<title>Student Test Scores Manager</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f4f6f9;
+padding:30px;
+text-align:center;
+}
+
+table{
+border-collapse:collapse;
+margin:auto;
+width:70%;
+margin-top:20px;
+}
+
+th,td{
+border:1px solid black;
+padding:10px;
+}
+
+th{
+background:#4CAF50;
+color:white;
+}
+
+input{
+padding:6px;
+margin:4px;
+}
+
+button{
+padding:8px 12px;
+margin:6px;
+cursor:pointer;
+}
+
+</style>
+
 </head>
+
 <body>
-    <h1>Student Test Scores – Mini Dataset Project</h1>
 
-    <div class="section">
-        <h2>Overview</h2>
-        <p>This project demonstrates how to use a <strong>2D array</strong> (list of lists) in Python to store and manage student test scores in different subjects. It shows how real-life school data can be efficiently organized and processed.</p>
-        <ul>
-            <li>Rows represent students</li>
-            <li>Columns represent subjects (Math, Science, English)</li>
-        </ul>
-        <p>The program allows users to <strong>access, update, display, and summarize</strong> the data clearly.</p>
-    </div>
+<h1>Student Test Scores Manager</h1>
 
-    <div class="section">
-        <h2>Problem Statement</h2>
-        <p>Teachers and students need a simple way to organize and review test scores. Without proper structure, scores can become confusing and difficult to manage. This project uses a 2D array to organize student scores efficiently and clearly.</p>
-    </div>
+<h3>Add Student Scores</h3>
 
-    <div class="section">
-        <h2>Objectives</h2>
-        <ul>
-            <li>Store student test scores using a 2D array</li>
-            <li>Access specific scores using indexing</li>
-            <li>Update scores when changes are needed</li>
-            <li>Calculate summaries like averages</li>
-            <li>Display organized test score data</li>
-        </ul>
-    </div>
+Student Name
+<input id="name">
 
-    <div class="section">
-        <h2>Inputs</h2>
-        <ul>
-            <li>Student test scores</li>
-            <li>Subject scores (Math, Science, English)</li>
-        </ul>
-    </div>
+Math
+<input id="math" type="number">
 
-    <div class="section">
-        <h2>Outputs</h2>
-        <ul>
-            <li>Printed test scores in table format</li>
-            <li>Updated student scores after changes</li>
-            <li>Average score of a student</li>
-        </ul>
-    </div>
+Science
+<input id="science" type="number">
 
-    <div class="section">
-        <h2>Logic Plan (Pseudocode)</h2>
-        <pre>
-START
-    Create 2D array of student scores
-    Display all student scores
-    Access a specific score
-    Update a selected score
-    Compute the average score of one student
-END
-        </pre>
-    </div>
+English
+<input id="english" type="number">
 
-    <div class="section">
-        <h2>Tech Notes</h2>
-        <ul>
-            <li>Uses Python 2D lists</li>
-            <li>No external libraries required</li>
-            <li>Implemented using basic Python functions (sum, indexing)</li>
-            <li>Designed for beginner-level understanding</li>
-        </ul>
-    </div>
+<button onclick="addStudent()">Add Student</button>
 
-    <div class="section">
-        <h2>Ethical Consideration</h2>
-        <p>This project follows ethical programming practices inspired by the <strong>ACM Code of Ethics</strong>:</p>
-        <ul>
-            <li>All code is original and properly documented</li>
-            <li>No sensitive personal data is collected or stored</li>
-            <li>Data used is fictional and for educational purposes only</li>
-        </ul>
-    </div>
+<table id="scoreTable">
 
-    <div class="section">
-        <h2>Example Python Code</h2>
-        <pre>
-# Sample Python code for managing student test scores
-students = [
-    [85, 90, 78],  # Student 1: Math, Science, English
-    [92, 88, 95],  # Student 2
-    [76, 85, 80]   # Student 3
-]
+<thead>
+<tr>
+<th>Student</th>
+<th>Math</th>
+<th>Science</th>
+<th>English</th>
+</tr>
+</thead>
 
-# Display scores
-for i, scores in enumerate(students):
-    print(f"Student {i+1}: Math={scores[0]}, Science={scores[1]}, English={scores[2]}")
+<tbody></tbody>
 
-# Update a score
-students[0][1] = 95  # Update Student 1 Science score to 95
+</table>
 
-# Calculate average of Student 1
-average = sum(students[0]) / len(students[0])
-print(f"Student 1 Average: {average}")
-        </pre>
-    </div>
+
+<h3>Access Specific Score</h3>
+
+Student Index
+<input id="accessStudent" type="number">
+
+Subject Index (0=Math, 1=Science, 2=English)
+<input id="accessSubject" type="number">
+
+<button onclick="accessScore()">Get Score</button>
+
+<p id="accessResult"></p>
+
+
+<h3>Update Score</h3>
+
+Student Index
+<input id="updateStudent" type="number">
+
+Subject Index
+<input id="updateSubject" type="number">
+
+New Score
+<input id="newScore" type="number">
+
+<button onclick="updateScore()">Update</button>
+
+
+<h3>Compute Student Average</h3>
+
+Student Index
+<input id="avgStudent" type="number">
+
+<button onclick="computeAverage()">Compute</button>
+
+<p id="avgResult"></p>
+
+
+<script>
+
+// 2D ARRAY for scores
+let scores = []
+
+// student names
+let names = []
+
+function displayScores(){
+
+let table = document.querySelector("#scoreTable tbody")
+
+table.innerHTML=""
+
+for(let i=0;i<scores.length;i++){
+
+let row="<tr>"
+
+row += "<td>"+names[i]+"</td>"
+
+for(let j=0;j<scores[i].length;j++){
+row += "<td>"+scores[i][j]+"</td>"
+}
+
+row+="</tr>"
+
+table.innerHTML += row
+
+}
+
+}
+
+
+// add student
+function addStudent(){
+
+let name = document.getElementById("name").value
+
+let math = Number(document.getElementById("math").value)
+let science = Number(document.getElementById("science").value)
+let english = Number(document.getElementById("english").value)
+
+let studentScores = [math,science,english]
+
+scores.push(studentScores)
+
+names.push(name)
+
+displayScores()
+
+}
+
+
+// access score
+function accessScore(){
+
+let s = document.getElementById("accessStudent").value
+let sub = document.getElementById("accessSubject").value
+
+let score = scores[s][sub]
+
+document.getElementById("accessResult").innerText =
+"Score: " + score
+
+}
+
+
+// update score
+function updateScore(){
+
+let s = document.getElementById("updateStudent").value
+let sub = document.getElementById("updateSubject").value
+let newScore = document.getElementById("newScore").value
+
+scores[s][sub] = Number(newScore)
+
+displayScores()
+
+}
+
+
+// compute average
+function computeAverage(){
+
+let s = document.getElementById("avgStudent").value
+
+let total = scores[s].reduce((a,b)=>a+b,0)
+
+let avg = total / scores[s].length
+
+document.getElementById("avgResult").innerText =
+"Average: " + avg.toFixed(2)
+
+}
+
+</script>
+
 </body>
 </html>
