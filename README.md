@@ -1,99 +1,92 @@
 # **COMSCI-2-MINI-DATA-SET**
-Student Test Scores – Mini Dataset Project
 
-Student Test Scores is a simple Python program that uses a 2D array (list of lists) to store and manage test scores of students in different subjects. This project demonstrates how real-life school data can be organized and processed efficiently using arrays.
+**ScoreTrackr – Student Test Scores Manager Web App**
 
+ScoreTrackr is a simple web-based application that uses a 2D array (JavaScript array of arrays) to store and manage student test scores across different subjects. This project demonstrates how real-world classroom data can be organized, accessed, and processed efficiently using basic data structures and web technologies.
 
-
+---
 
 ## **Overview**
 
-This project stores weekly test scores of students in a table-like structure using a 2D array:
+This project stores student test scores in a table-like structure using a 2D array:
 
-Rows represent students
+* Rows represent students
+* Columns represent subjects (Math, Science, English)
 
-Columns represent subjects (Math, Science, English)
+The application allows users to input, display, access, update, and compute student scores in an interactive interface.
 
-The program allows users to access, update, display, and summarize the data clearly.
-
-
+---
 
 ## **Problem Statement**
 
-Teachers and students need a simple way to organize and review test scores. Without proper structure, scores can become confusing and difficult to manage. This project shows how a 2D array can organize student scores efficiently and clearly.
+Teachers and students often struggle with organizing and tracking multiple test scores. When data is unstructured or manually handled, it becomes difficult to compute averages, update records, and retrieve specific information quickly. This project addresses that problem by providing a simple and structured system for managing student scores digitally.
 
-
+---
 
 ## **Objectives**
 
-Store student test scores using a 2D array
+* Store student test scores using a 2D array
+* Provide a user interface for adding student data
+* Access specific scores using indexing
+* Update scores dynamically when needed
+* Compute student averages automatically
+* Display organized data in a table format
 
-Access specific scores using indexing
-
-Update scores when changes are needed
-
-Calculate summaries like averages
-
-Display organized test score data
-
-
+---
 
 ## **Inputs**
 
-Student test scores
+* Student names
+* Subject scores (Math, Science, English)
 
-Subject scores (Math, Science, English)
-
-
+---
 
 ## **Outputs**
 
-Printed test scores in table format
+* Displayed student scores in a table format
+* Updated scores after modification
+* Computed average score per student
+* Retrieved specific score based on input
 
-Updated student scores after changes
-
-Average score of a student
-
-
+---
 
 ## **Logic Plan (Pseudocode)**
+
 START
-    Create 2D array of student scores
-    Display all student scores
-    Access a specific score
-    Update a selected score
-    Compute the average score of one student
+  Create empty 2D array for scores
+  Create array for student names
+  Input student name and scores
+  Store data in arrays
+  Display all student scores in table
+  Access a specific score using index
+  Update selected score
+  Compute and display average score
 END
 
+---
 
 ## **Tech Notes**
 
-Uses Python 2D lists
+* Uses HTML, CSS, and JavaScript
+* Data stored using JavaScript 2D arrays
+* No external libraries required
+* Implemented using basic DOM manipulation and functions
+* Designed for beginner-level understanding of data structures
 
-No external libraries required
-
-Implemented using basic Python functions (sum, indexing)
-
-Designed for beginner-level understanding
-
-
+---
 
 ## **Ethical Consideration**
 
 This project follows ethical programming practices inspired by the Association for Computing Machinery (ACM) Code of Ethics:
 
-All code is original and properly documented
+* All code is original and properly documented
+* No sensitive personal data is collected or stored
+* Data used is fictional and for educational purposes only
 
-No sensitive personal data is collected or stored
-
-Data used is fictional and for educational purposes only
-
-
+---
 
 ## **Contributors**
 
 Christian Kenshin G. Cupay
-
 Arron Sean P. Gorme
-
 Slater Yuan Y. Ladaran
