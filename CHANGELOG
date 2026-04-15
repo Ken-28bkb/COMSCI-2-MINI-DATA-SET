@@ -1,79 +1,102 @@
-Student Test Scores – Changelog
+**ScoreTrackr – Changelog**
 
-[v1.0] – 2025-08-15
-Added
+---
 
-Created initial 2D array for student test scores
+**[v1.0] – 2025-08-15**
+**Added**
 
-Included 5 students and 3 subjects (Math, Science, English)
+* Created initial 2D array for storing student test scores
+* Included sample dataset with students and 3 subjects (Math, Science, English)
+* Set up basic project structure
 
-Set up basic Python file structure
+---
 
-[v1.1] – 2025-08-29
-Added
+**[v1.1] – 2025-08-29**
+**Added**
 
-Labeled rows to represent individual students
+* Defined rows as students and columns as subjects
+* Added comments for clarity of data structure
 
-Added comments for subject columns
+**Changed**
 
-Changed
+* Improved formatting of dataset for better readability
 
-Improved formatting of the 2D array for readability
+---
 
-[v1.2] – 2025-09-12
-Added
+**[v1.2] – 2025-09-12**
+**Added**
 
-Code to access and print a specific score from the array
+* Implemented functionality to access a specific score using indexing
+* Tested retrieval of values from the 2D array
 
-Tested array indexing using sample outputs
+---
 
-[v1.3] – 2025-10-03
-Added
+**[v1.3] – 2025-10-03**
+**Added**
 
-Score update feature for modifying existing values
+* Implemented score update functionality
 
-Changed
+**Changed**
 
-Updated Student 4’s Math score to 77
+* Improved handling of data modification within the array
 
-[v1.4] – 2025-10-21
-Added
+---
 
-Average calculation for a student’s scores
+**[v1.4] – 2025-10-21**
+**Added**
 
-Output display for computed average
+* Implemented average calculation for student scores
+* Displayed computed averages
 
-Improved console output formatting
+**Changed**
 
-[v1.4.1] – 2025-11-10 (Minor Patch)
-Fixed
+* Improved output formatting for readability
 
-Minor calculation formatting issue
+---
 
-Improved variable naming for clarity
+**[v1.4.1] – 2025-11-10 (Minor Patch)**
+**Fixed**
 
-[v1.5] – 2025-11-26
-Final
+* Minor issues in average calculation formatting
+* Improved variable naming for clarity
 
-Final review of dataset and code logic
+---
 
-Cleaned up comments and formatting
+**[v1.5] – 2025-11-26**
+**Final (Python Version)**
 
-Prepared file for submission
+* Final review of dataset logic and structure
+* Cleaned up comments and formatting
+* Prepared initial version for submission
 
-[v1.6] – 2026-02-16
-Added
+---
 
-Updated README with improved documentation
+**[v2.0] – 2026-02-16**
+**Major Update (Web App Transition)**
 
-Added detailed methodology section
+**Added**
 
-Added ethical considerations section
+* Converted project into a web-based application (HTML, CSS, JavaScript)
+* Created interactive user interface for inputting and displaying scores
+* Added dynamic table rendering using DOM manipulation
+* Implemented real-time score updates and retrieval
 
-Improved project description and objectives
+**Changed**
 
-Changed
+* Migrated from Python implementation to JavaScript 2D arrays
+* Improved overall usability and accessibility of the system
+* Refined project structure for web deployment (GitHub Pages)
 
-Refined formatting and overall repository organization
+---
 
-Prepared repository for major project update submission
+**[v2.1] – 2026-03-01**
+**Added**
+
+* Introduced application branding: **ScoreTrackr**
+* Added average column in the table for quick performance overview
+* Improved UI design (layout, colors, button styling)
+
+**Changed**
+
+* Enhanced user experience with cleaner interface
+* Improved input validation and feedback messages
