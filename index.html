@@ -2,48 +2,76 @@
 <html>
 <head>
 
-<title>Student Test Scores Manager</title>
+<title>ScoreTrackr</title>
 
 <style>
 
 body{
 font-family: Arial, sans-serif;
-background:#f4f6f9;
+background:#eef2f7;
 padding:30px;
 text-align:center;
 }
 
+.container{
+background:white;
+padding:25px;
+border-radius:10px;
+width:75%;
+margin:auto;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+h1{
+color:#2c3e50;
+}
+
 h3{
-margin-top:35px;
+margin-top:30px;
+color:#34495e;
 }
 
 table{
 border-collapse:collapse;
 margin:auto;
-width:70%;
+width:100%;
 margin-top:20px;
 }
 
 th,td{
-border:1px solid black;
 padding:10px;
+border-bottom:1px solid #ddd;
 }
 
 th{
-background:#4CAF50;
+background:#2ecc71;
 color:white;
 }
 
 input{
-padding:6px;
+padding:8px;
 margin:5px;
-width:90px;
+width:100px;
+border-radius:5px;
+border:1px solid #ccc;
 }
 
 button{
-padding:8px 14px;
+padding:8px 15px;
 margin:6px;
+border:none;
+border-radius:5px;
+background:#3498db;
+color:white;
 cursor:pointer;
+}
+
+button:hover{
+background:#2980b9;
+}
+
+.section{
+margin-top:20px;
 }
 
 </style>
@@ -52,83 +80,69 @@ cursor:pointer;
 
 <body>
 
-<h1>Student Test Scores Manager</h1>
+<div class="container">
 
-<h3>Add Student Scores</h3>
+<h1>📊 ScoreTrackr</h1>
+<p>Simple Student Score Management System</p>
 
-Student Name
-<input id="name">
+<div class="section">
+<h3>Add Student</h3>
 
-Math
-<input id="math" type="number">
+<input id="name" placeholder="Name">
+<input id="math" type="number" placeholder="Math">
+<input id="science" type="number" placeholder="Science">
+<input id="english" type="number" placeholder="English">
 
-Science
-<input id="science" type="number">
-
-English
-<input id="english" type="number">
-
-<button onclick="addStudent()">Add Student</button>
+<button onclick="addStudent()">Add</button>
+</div>
 
 <table id="scoreTable">
-
 <thead>
 <tr>
-<th>Student</th>
+<th>Name</th>
 <th>Math</th>
 <th>Science</th>
 <th>English</th>
+<th>Average</th>
 </tr>
 </thead>
-
 <tbody></tbody>
-
 </table>
 
+<div class="section">
+<h3>Get Score</h3>
 
-<h3>Access Specific Score</h3>
+<input id="accessStudent" type="number" placeholder="Student Index">
+<input id="accessSubject" type="number" placeholder="0-Math 1-Sci 2-Eng">
 
-Student Index
-<input id="accessStudent" type="number">
-
-Subject Index (0=Math, 1=Science, 2=English)
-<input id="accessSubject" type="number">
-
-<button onclick="accessScore()">Get Score</button>
-
+<button onclick="accessScore()">Get</button>
 <p id="accessResult"></p>
+</div>
 
-
+<div class="section">
 <h3>Update Score</h3>
 
-Student Index
-<input id="updateStudent" type="number">
-
-Subject Index (0=Math, 1=Science, 2=English)
-<input id="updateSubject" type="number">
-
-New Score
-<input id="newScore" type="number">
+<input id="updateStudent" type="number" placeholder="Student Index">
+<input id="updateSubject" type="number" placeholder="0-Math 1-Sci 2-Eng">
+<input id="newScore" type="number" placeholder="New Score">
 
 <button onclick="updateScore()">Update</button>
+</div>
 
+<div class="section">
+<h3>Compute Average</h3>
 
-<h3>Compute Student Average</h3>
-
-Student Index
-<input id="avgStudent" type="number">
+<input id="avgStudent" type="number" placeholder="Student Index">
 
 <button onclick="computeAverage()">Compute</button>
-
 <p id="avgResult"></p>
+</div>
 
+</div>
 
 <script>
 
-// 2D ARRAY for scores
 let scores = []
-
-// student names
 let names = []
 
 function displayScores(){
@@ -138,6 +152,9 @@ table.innerHTML=""
 
 for(let i=0;i<scores.length;i++){
 
+let total = scores[i].reduce((a,b)=>a+b,0)
+let avg = (total / scores[i].length).toFixed(2)
+
 let row="<tr>"
 row += "<td>"+names[i]+"</td>"
 
@@ -145,14 +162,13 @@ for(let j=0;j<scores[i].length;j++){
 row += "<td>"+scores[i][j]+"</td>"
 }
 
+row += "<td>"+avg+"</td>"
 row+="</tr>"
 
 table.innerHTML += row
-
 }
 
 }
-
 
 // add student
 function addStudent(){
@@ -164,13 +180,11 @@ let science = Number(document.getElementById("science").value)
 let english = Number(document.getElementById("english").value)
 
 if(name=="" || isNaN(math) || isNaN(science) || isNaN(english)){
-alert("Please fill in all fields.")
+alert("Complete all fields.")
 return
 }
 
-let studentScores = [math,science,english]
-
-scores.push(studentScores)
+scores.push([math,science,english])
 names.push(name)
 
 displayScores()
@@ -179,9 +193,7 @@ document.getElementById("name").value=""
 document.getElementById("math").value=""
 document.getElementById("science").value=""
 document.getElementById("english").value=""
-
 }
-
 
 // access score
 function accessScore(){
@@ -190,17 +202,13 @@ let s = Number(document.getElementById("accessStudent").value)
 let sub = Number(document.getElementById("accessSubject").value)
 
 if(!scores[s] || scores[s][sub]==undefined){
-document.getElementById("accessResult").innerText = "Invalid index."
+document.getElementById("accessResult").innerText = "Invalid input."
 return
 }
 
-let score = scores[s][sub]
-
 document.getElementById("accessResult").innerText =
-"Score: " + score
-
+"Score: " + scores[s][sub]
 }
-
 
 // update score
 function updateScore(){
@@ -210,16 +218,13 @@ let sub = Number(document.getElementById("updateSubject").value)
 let newScore = Number(document.getElementById("newScore").value)
 
 if(!scores[s] || scores[s][sub]==undefined){
-alert("Invalid index.")
+alert("Invalid input.")
 return
 }
 
 scores[s][sub] = newScore
-
 displayScores()
-
 }
-
 
 // compute average
 function computeAverage(){
@@ -227,17 +232,15 @@ function computeAverage(){
 let s = Number(document.getElementById("avgStudent").value)
 
 if(!scores[s]){
-document.getElementById("avgResult").innerText="Invalid student index."
+document.getElementById("avgResult").innerText="Invalid student."
 return
 }
 
 let total = scores[s].reduce((a,b)=>a+b,0)
-
 let avg = total / scores[s].length
 
 document.getElementById("avgResult").innerText =
 "Average: " + avg.toFixed(2)
-
 }
 
 </script>
