@@ -2,76 +2,87 @@
 <html>
 <head>
 
-<title>ScoreTrackr</title>
+<title>GradeTrackr</title>
 
 <style>
 
 body{
-font-family: Arial, sans-serif;
-background:#eef2f7;
-padding:30px;
+font-family: Arial;
+background:#fff5e6;
 text-align:center;
+padding:20px;
 }
 
 .container{
 background:white;
-padding:25px;
+padding:20px;
 border-radius:10px;
-width:75%;
+width:85%;
 margin:auto;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
 }
 
 h1{
-color:#2c3e50;
+color:#e67e22;
 }
 
 h3{
-margin-top:30px;
-color:#34495e;
+color:#d35400;
+margin-top:25px;
+}
+
+hr{
+border: none;
+height: 2px;
+background: #e67e22;
+margin: 25px 0;
+}
+
+button{
+background:#e67e22;
+color:white;
+border:none;
+padding:6px 10px;
+margin:5px;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#d35400;
+}
+
+input{
+padding:6px;
+margin:5px;
+border-radius:5px;
+border:1px solid #ccc;
+width:70px;
 }
 
 table{
 border-collapse:collapse;
 margin:auto;
-width:100%;
 margin-top:20px;
+width:100%;
 }
 
 th,td{
-padding:10px;
-border-bottom:1px solid #ddd;
+border:1px solid #ddd;
+padding:8px;
 }
 
 th{
-background:#2ecc71;
+background:#e67e22;
 color:white;
-}
-
-input{
-padding:8px;
-margin:5px;
-width:100px;
-border-radius:5px;
-border:1px solid #ccc;
-}
-
-button{
-padding:8px 15px;
-margin:6px;
-border:none;
-border-radius:5px;
-background:#3498db;
-color:white;
-cursor:pointer;
-}
-
-button:hover{
-background:#2980b9;
 }
 
 .section{
 margin-top:20px;
+}
+
+.item{
+margin:5px;
 }
 
 </style>
@@ -82,168 +93,268 @@ margin-top:20px;
 
 <div class="container">
 
-<h1>📊 ScoreTrackr</h1>
-<p>Simple Student Score Management System</p>
+<h1>📘 GradeTrackr</h1>
+<p>Student Grade Management System</p>
 
+<!-- SUBJECTS -->
 <div class="section">
-<h3>Add Student</h3>
-
-<input id="name" placeholder="Name">
-<input id="math" type="number" placeholder="Math">
-<input id="science" type="number" placeholder="Science">
-<input id="english" type="number" placeholder="English">
-
-<button onclick="addStudent()">Add</button>
+<h3>Subjects</h3>
+<button onclick="addSubject()">+ Add Subject</button>
+<div id="subjectList"></div>
 </div>
 
-<table id="scoreTable">
-<thead>
-<tr>
-<th>Name</th>
-<th>Math</th>
-<th>Science</th>
-<th>English</th>
-<th>Average</th>
-</tr>
-</thead>
+<hr>
+
+<!-- STUDENTS -->
+<div class="section">
+<h3>Students</h3>
+<button onclick="addStudent()">+ Add Student</button>
+<div id="studentList"></div>
+</div>
+
+<hr>
+
+<!-- TABLE -->
+<div class="section">
+<h3>Grades Table</h3>
+<table id="gradeTable">
+<thead></thead>
 <tbody></tbody>
 </table>
-
-<div class="section">
-<h3>Get Score</h3>
-
-<input id="accessStudent" type="number" placeholder="Student Index">
-<input id="accessSubject" type="number" placeholder="0-Math 1-Sci 2-Eng">
-
-<button onclick="accessScore()">Get</button>
-<p id="accessResult"></p>
 </div>
 
+<hr>
+
+<!-- GET GRADE -->
 <div class="section">
-<h3>Update Score</h3>
-
-<input id="updateStudent" type="number" placeholder="Student Index">
-<input id="updateSubject" type="number" placeholder="0-Math 1-Sci 2-Eng">
-<input id="newScore" type="number" placeholder="New Score">
-
-<button onclick="updateScore()">Update</button>
+<h3>Get Grade</h3>
+<input id="getStudent" type="number" placeholder="Student #">
+<input id="getSubject" type="number" placeholder="Subject #">
+<button onclick="getGrade()">Get</button>
+<p id="result"></p>
 </div>
 
+<hr>
+
+<!-- UPDATE GRADE -->
 <div class="section">
-<h3>Compute Average</h3>
-
-<input id="avgStudent" type="number" placeholder="Student Index">
-
-<button onclick="computeAverage()">Compute</button>
-<p id="avgResult"></p>
+<h3>Upgrade Grade</h3>
+<input id="upStudent" type="number" placeholder="Student #">
+<input id="upSubject" type="number" placeholder="Subject #">
+<input id="newGrade" type="number" placeholder="Grade">
+<button onclick="upgradeGrade()">Update</button>
 </div>
 
 </div>
 
 <script>
 
-let scores = []
-let names = []
+let subjects = []
+let students = []
+let grades = []
 
-function displayScores(){
 
-let table = document.querySelector("#scoreTable tbody")
-table.innerHTML=""
+// ADD SUBJECT
+function addSubject(){
+let name = "Subject " + (subjects.length + 1)
+subjects.push(name)
 
-for(let i=0;i<scores.length;i++){
-
-let total = scores[i].reduce((a,b)=>a+b,0)
-let avg = (total / scores[i].length).toFixed(2)
-
-let row="<tr>"
-row += "<td>"+names[i]+"</td>"
-
-for(let j=0;j<scores[i].length;j++){
-row += "<td>"+scores[i][j]+"</td>"
+for(let i=0;i<grades.length;i++){
+grades[i].push(0)
 }
 
-row += "<td>"+avg+"</td>"
-row+="</tr>"
-
-table.innerHTML += row
+renderLists()
+displayTable()
 }
 
-}
 
-// add student
+// ADD STUDENT
 function addStudent(){
+let name = "Student " + (students.length + 1)
+students.push(name)
 
-let name = document.getElementById("name").value.trim()
+let row = []
+for(let i=0;i<subjects.length;i++){
+row.push(0)
+}
 
-let math = Number(document.getElementById("math").value)
-let science = Number(document.getElementById("science").value)
-let english = Number(document.getElementById("english").value)
+grades.push(row)
 
-if(name=="" || isNaN(math) || isNaN(science) || isNaN(english)){
-alert("Complete all fields.")
+renderLists()
+displayTable()
+}
+
+
+// REMOVE SUBJECT
+function removeSubject(index){
+
+subjects.splice(index,1)
+
+for(let i=0;i<grades.length;i++){
+grades[i].splice(index,1)
+}
+
+renderLists()
+displayTable()
+}
+
+
+// REMOVE STUDENT
+function removeStudent(index){
+
+students.splice(index,1)
+grades.splice(index,1)
+
+renderLists()
+displayTable()
+}
+
+
+// RENDER LISTS
+function renderLists(){
+
+let subjectDiv = document.getElementById("subjectList")
+subjectDiv.innerHTML = ""
+
+for(let i=0;i<subjects.length;i++){
+subjectDiv.innerHTML += `
+<div class="item">
+<b>[#${i+1}]</b>
+<input value="${subjects[i]}" 
+onchange="renameSubject(${i}, this.value)">
+<button onclick="removeSubject(${i})">❌</button>
+</div>`
+}
+
+let studentDiv = document.getElementById("studentList")
+studentDiv.innerHTML = ""
+
+for(let i=0;i<students.length;i++){
+studentDiv.innerHTML += `
+<div class="item">
+<b>Student ${i+1}:</b>
+<input value="${students[i]}" 
+onchange="renameStudent(${i}, this.value)">
+<button onclick="removeStudent(${i})">❌</button>
+</div>`
+}
+
+}
+
+
+// RENAME
+function renameSubject(i,val){
+subjects[i] = val
+displayTable()
+}
+
+function renameStudent(i,val){
+students[i] = val
+displayTable()
+}
+
+
+// DISPLAY TABLE
+function displayTable(){
+
+let thead = document.querySelector("#gradeTable thead")
+let tbody = document.querySelector("#gradeTable tbody")
+
+thead.innerHTML = ""
+tbody.innerHTML = ""
+
+// header
+let header = "<tr><th>#</th><th>Student</th>"
+
+for(let i=0;i<subjects.length;i++){
+header += `<th>[#${i+1}] ${subjects[i]}</th>`
+}
+
+header += "</tr>"
+thead.innerHTML = header
+
+
+// rows
+for(let i=0;i<students.length;i++){
+
+let row = `<tr><td>${i+1}</td><td>${students[i]}</td>`
+
+for(let j=0;j<subjects.length;j++){
+
+let value = grades[i][j] ?? 0
+
+row += `<td>
+<input type="number" min="0" max="99" value="${value}" 
+oninput="limitGrade(this)"
+onchange="updateGrade(${i},${j},this.value)">
+</td>`
+}
+
+row += "</tr>"
+tbody.innerHTML += row
+}
+
+}
+
+
+// LIMIT INPUT
+function limitGrade(input){
+if(input.value.length > 2){
+input.value = input.value.slice(0,2)
+}
+if(input.value > 99){
+input.value = 99
+}
+if(input.value < 0){
+input.value = 0
+}
+}
+
+
+// UPDATE GRADE
+function updateGrade(i,j,val){
+grades[i][j] = Number(val)
+}
+
+
+// GET GRADE
+function getGrade(){
+
+let s = Number(document.getElementById("getStudent").value) - 1
+let sub = Number(document.getElementById("getSubject").value) - 1
+
+if(!students[s] || grades[s][sub] == undefined){
+document.getElementById("result").innerText = "Invalid input"
 return
 }
 
-scores.push([math,science,english])
-names.push(name)
+document.getElementById("result").innerText =
+students[s] + " - " + subjects[sub] + ": " + grades[s][sub]
 
-displayScores()
-
-document.getElementById("name").value=""
-document.getElementById("math").value=""
-document.getElementById("science").value=""
-document.getElementById("english").value=""
 }
 
-// access score
-function accessScore(){
 
-let s = Number(document.getElementById("accessStudent").value)
-let sub = Number(document.getElementById("accessSubject").value)
+// UPGRADE GRADE
+function upgradeGrade(){
 
-if(!scores[s] || scores[s][sub]==undefined){
-document.getElementById("accessResult").innerText = "Invalid input."
+let s = Number(document.getElementById("upStudent").value) - 1
+let sub = Number(document.getElementById("upSubject").value) - 1
+let newG = Number(document.getElementById("newGrade").value)
+
+if(newG > 99) newG = 99
+if(newG < 0) newG = 0
+
+if(!students[s] || grades[s][sub] == undefined){
+alert("Invalid input")
 return
 }
 
-document.getElementById("accessResult").innerText =
-"Score: " + scores[s][sub]
-}
+grades[s][sub] = newG
+displayTable()
 
-// update score
-function updateScore(){
-
-let s = Number(document.getElementById("updateStudent").value)
-let sub = Number(document.getElementById("updateSubject").value)
-let newScore = Number(document.getElementById("newScore").value)
-
-if(!scores[s] || scores[s][sub]==undefined){
-alert("Invalid input.")
-return
-}
-
-scores[s][sub] = newScore
-displayScores()
-}
-
-// compute average
-function computeAverage(){
-
-let s = Number(document.getElementById("avgStudent").value)
-
-if(!scores[s]){
-document.getElementById("avgResult").innerText="Invalid student."
-return
-}
-
-let total = scores[s].reduce((a,b)=>a+b,0)
-let avg = total / scores[s].length
-
-document.getElementById("avgResult").innerText =
-"Average: " + avg.toFixed(2)
 }
 
 </script>
 
 </body>
-</html> 
+</html>
