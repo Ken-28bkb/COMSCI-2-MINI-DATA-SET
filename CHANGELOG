@@ -1,102 +1,120 @@
-**ScoreTrackr – Changelog**
+GradeTrackr – Changelog
 
 ---
 
-**[v1.0] – 2025-08-15**
-**Added**
-
-* Created initial 2D array for storing student test scores
-* Included sample dataset with students and 3 subjects (Math, Science, English)
-* Set up basic project structure
-
----
-
-**[v1.1] – 2025-08-29**
-**Added**
-
-* Defined rows as students and columns as subjects
-* Added comments for clarity of data structure
-
-**Changed**
-
-* Improved formatting of dataset for better readability
+[v1.0] – 2025-08-15
+Added
+- Created initial 2D array for storing student test scores
+- Included sample dataset with students and 3 subjects (Math, Science, English)
+- Set up basic project structure
 
 ---
 
-**[v1.2] – 2025-09-12**
-**Added**
+[v1.1] – 2025-08-29
+Added
+- Defined rows as students and columns as subjects
+- Added comments for clarity of data structure
 
-* Implemented functionality to access a specific score using indexing
-* Tested retrieval of values from the 2D array
-
----
-
-**[v1.3] – 2025-10-03**
-**Added**
-
-* Implemented score update functionality
-
-**Changed**
-
-* Improved handling of data modification within the array
+Changed
+- Improved formatting of dataset for better readability
 
 ---
 
-**[v1.4] – 2025-10-21**
-**Added**
-
-* Implemented average calculation for student scores
-* Displayed computed averages
-
-**Changed**
-
-* Improved output formatting for readability
+[v1.2] – 2025-09-12
+Added
+- Implemented functionality to access a specific score using indexing
+- Tested retrieval of values from the 2D array
 
 ---
 
-**[v1.4.1] – 2025-11-10 (Minor Patch)**
-**Fixed**
+[v1.3] – 2025-10-03
+Added
+- Implemented score update functionality
 
-* Minor issues in average calculation formatting
-* Improved variable naming for clarity
-
----
-
-**[v1.5] – 2025-11-26**
-**Final (Python Version)**
-
-* Final review of dataset logic and structure
-* Cleaned up comments and formatting
-* Prepared initial version for submission
+Changed
+- Improved handling of data modification within the array
 
 ---
 
-**[v2.0] – 2026-02-16**
-**Major Update (Web App Transition)**
+[v1.4] – 2025-10-21
+Added
+- Implemented average calculation for student scores
+- Displayed computed averages
 
-**Added**
-
-* Converted project into a web-based application (HTML, CSS, JavaScript)
-* Created interactive user interface for inputting and displaying scores
-* Added dynamic table rendering using DOM manipulation
-* Implemented real-time score updates and retrieval
-
-**Changed**
-
-* Migrated from Python implementation to JavaScript 2D arrays
-* Improved overall usability and accessibility of the system
-* Refined project structure for web deployment (GitHub Pages)
+Changed
+- Improved output formatting for readability
 
 ---
 
-**[v2.1] – 2026-03-01**
-**Added**
+[v1.4.1] – 2025-11-10 (Minor Patch)
+Fixed
+- Minor issues in average calculation formatting
+- Improved variable naming for clarity
 
-* Introduced application branding: **ScoreTrackr**
-* Added average column in the table for quick performance overview
-* Improved UI design (layout, colors, button styling)
+---
 
-**Changed**
+[v1.5] – 2025-11-26
+Final (Python Version)
+- Final review of dataset logic and structure
+- Cleaned up comments and formatting
+- Prepared initial version for submission
 
-* Enhanced user experience with cleaner interface
-* Improved input validation and feedback messages
+---
+
+[v2.0] – 2026-02-16
+Major Update (Web App Transition)
+
+Added
+- Converted project into a web-based application (HTML, CSS, JavaScript)
+- Created interactive user interface for inputting and displaying scores
+- Added dynamic table rendering using DOM manipulation
+- Implemented real-time score updates and retrieval
+
+Changed
+- Migrated from Python implementation to JavaScript 2D arrays
+- Improved usability and accessibility
+- Prepared project for GitHub Pages deployment
+
+---
+
+[v2.1] – 2026-03-01
+Added
+- Introduced application branding: ScoreTrackr
+- Added average column for performance overview
+- Improved UI design (layout, colors, buttons)
+
+Changed
+- Enhanced user experience
+- Improved input validation
+
+---
+
+[v2.2] – 2026-04-XX
+Major System Refinement (Final Version)
+
+Added
+- Renamed system to GradeTrackr
+- Added support for dynamic subjects and students
+- Implemented remove functionality for subjects and students
+- Added Upgrade Grade feature
+- Added Get Grade feature using user-friendly indexing
+- Implemented grade validation (0–99, max 2 digits)
+- Added numbered indexing display for subjects and students
+- Added section separators for better UI structure
+
+Changed
+- Replaced "score" terminology with "grade"
+- Improved table structure (separate student number column)
+- Updated subject labels format to [#] Subject Name
+- Optimized data handling to maintain 2D array integrity
+
+Fixed
+- Resolved table misalignment when deleting rows/columns
+- Fixed input overflow issues for grade values
+
+---
+
+Final Version
+- Fully functional GradeTrackr system
+- Stable data structure and UI
+- Ready for academic submission
