@@ -102,6 +102,3 @@ This project follows ethical programming practices:
 Christian Kenshin G. Cupay  
 Arron Sean P. Gorme  
 Slater Yuan Y. Ladaran
-Christian Kenshin G. Cupay  
-Arron Sean P. Gorme  
-Slater Yuan Y. Ladaran
